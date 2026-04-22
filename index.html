@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="music-player">
+        <div id="home" class="tab-content active">
+            <h1>My Music Player</h1>
+            <div class="song-info">
+                <img id="album-art" src="" alt="Album Art" style="display: none;">
+                <h2 id="song-title">Select a song</h2>
+                <p id="artist">Artist</p>
+            </div>
+            <div class="controls">
+                <button id="prev-btn">&#9198;</button>
+                <button id="play-pause-btn">&#9654;</button>
+                <button id="next-btn">&#9197;</button>
+            </div>
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress-bar" value="0" max="100">
+                <span id="duration">0:00</span>
+            </div>
+            <div class="volume-control">
+                <label for="volume">Volume: <span id="volume-value">20%</span></label>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.2">
+            </div>
+            <div class="speed-control">
+                <label for="speed">Speed: <span id="speed-value">1x</span></label>
+                <input type="range" id="speed" min="0.5" max="2" step="0.01" value="1">
+            </div>
+            <div class="equalizer">
+                <h3>Equalizer</h3>
+                <div class="eq-controls">
+                    <div class="eq-band">
+                        <label for="eq0">60Hz</label>
+                        <input type="range" id="eq0" min="-20" max="20" value="0">
+                    </div>
+                    <div class="eq-band">
+                        <label for="eq1">250Hz</label>
+                        <input type="range" id="eq1" min="-20" max="20" value="0">
+                    </div>
+                    <div class="eq-band">
+                        <label for="eq2">1kHz</label>
+                        <input type="range" id="eq2" min="-20" max="20" value="0">
+                    </div>
+                    <div class="eq-band">
+                        <label for="eq3">4kHz</label>
+                        <input type="range" id="eq3" min="-20" max="20" value="0">
+                    </div>
+                    <div class="eq-band">
+                        <label for="eq4">16kHz</label>
+                        <input type="range" id="eq4" min="-20" max="20" value="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="playlist" class="tab-content">
+            <h2>Playlist</h2>
+            <ul id="song-list"></ul>
+        </div>
+        <div id="album" class="tab-content">
+            <h2>Albums</h2>
+            <p>Album view coming soon...</p>
+        </div>
+        <div id="favourite" class="tab-content">
+            <h2>Favourites</h2>
+            <ul id="favourite-list"></ul>
+        </div>
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-tab="home">Home</button>
+            <button class="nav-btn" data-tab="playlist">Playlist</button>
+            <button class="nav-btn" data-tab="album">Album</button>
+            <button class="nav-btn" data-tab="favourite">Favourite</button>
+        </nav>
+    </div>
+    <audio id="audio" preload="metadata"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
